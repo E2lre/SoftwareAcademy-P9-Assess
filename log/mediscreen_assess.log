@@ -1,0 +1,598 @@
+2021-03-02 14:16:38,254 ERROR o.s.b.SpringApplication-reportFailure [main] Application run failed
+java.lang.NoClassDefFoundError: org/springframework/boot/Bootstrapper
+	at java.lang.ClassLoader.defineClass1(Native Method) ~[?:?]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:1016) ~[?:?]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174) ~[?:?]
+	at jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800) ~[?:?]
+	at jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698) ~[?:?]
+	at jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621) ~[?:?]
+	at jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579) ~[?:?]
+	at jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[?:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[?:?]
+	at org.springframework.cloud.bootstrap.encrypt.DecryptEnvironmentPostProcessor.getTextEncryptor(DecryptEnvironmentPostProcessor.java:82) ~[spring-cloud-context-3.0.1.jar:3.0.1]
+	at org.springframework.cloud.bootstrap.encrypt.DecryptEnvironmentPostProcessor.postProcessEnvironment(DecryptEnvironmentPostProcessor.java:68) ~[spring-cloud-context-3.0.1.jar:3.0.1]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEnvironmentPreparedEvent(ConfigFileApplicationListener.java:188) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEvent(ConfigFileApplicationListener.java:176) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) ~[spring-context-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:126) ~[spring-boot-test-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:337) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:342) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:337) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1654) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312) ~[?:?]
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[?:?]
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734) ~[?:?]
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658) ~[?:?]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:336) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:259) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:252) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at java.util.Optional.orElseGet(Optional.java:369) ~[?:?]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:251) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at java.util.ArrayList.forEach(ArrayList.java:1540) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at java.util.ArrayList.forEach(ArrayList.java:1540) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:229) ~[junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:197) ~[junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:211) [junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:191) [junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128) [junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:155) [junit-platform-surefire-provider-1.3.2.jar:1.3.2]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:134) [junit-platform-surefire-provider-1.3.2.jar:1.3.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.Bootstrapper
+	at jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[?:?]
+	at jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[?:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[?:?]
+	... 89 more
+2021-03-02 14:16:38,306 ERROR o.s.t.c.TestContextManager-prepareTestInstance [main] Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@6a275836] to prepare test instance [com.mediscreen.assess.AssessApplicationTests@1a6864f0]
+java.lang.NoClassDefFoundError: org/springframework/boot/Bootstrapper
+	at java.lang.ClassLoader.defineClass1(Native Method) ~[?:?]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:1016) ~[?:?]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174) ~[?:?]
+	at jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:800) ~[?:?]
+	at jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:698) ~[?:?]
+	at jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:621) ~[?:?]
+	at jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:579) ~[?:?]
+	at jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[?:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[?:?]
+	at org.springframework.cloud.bootstrap.encrypt.DecryptEnvironmentPostProcessor.getTextEncryptor(DecryptEnvironmentPostProcessor.java:82) ~[spring-cloud-context-3.0.1.jar:3.0.1]
+	at org.springframework.cloud.bootstrap.encrypt.DecryptEnvironmentPostProcessor.postProcessEnvironment(DecryptEnvironmentPostProcessor.java:68) ~[spring-cloud-context-3.0.1.jar:3.0.1]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEnvironmentPreparedEvent(ConfigFileApplicationListener.java:188) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEvent(ConfigFileApplicationListener.java:176) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) ~[spring-context-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:126) ~[spring-boot-test-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98) ~[spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:337) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:342) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:337) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1654) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312) ~[?:?]
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[?:?]
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734) ~[?:?]
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658) ~[?:?]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:336) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:259) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:252) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at java.util.Optional.orElseGet(Optional.java:369) ~[?:?]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:251) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.5.2.jar:5.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at java.util.ArrayList.forEach(ArrayList.java:1540) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at java.util.ArrayList.forEach(ArrayList.java:1540) ~[?:?]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51) ~[junit-platform-engine-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:229) ~[junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:197) ~[junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:211) [junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:191) [junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128) [junit-platform-launcher-1.5.2.jar:1.5.2]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:155) [junit-platform-surefire-provider-1.3.2.jar:1.3.2]
+	at org.junit.platform.surefire.provider.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:134) [junit-platform-surefire-provider-1.3.2.jar:1.3.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.Bootstrapper
+	at jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[?:?]
+	at jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[?:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[?:?]
+	... 89 more
+2021-03-02 15:10:40,667 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:10:40,721 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:10:41,924 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:10:44,398 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:10:44,410 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:10:50,804 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:10:51,634 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 16.458 seconds (JVM running for 20.587)
+2021-03-02 15:10:51,731 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver-logException [main] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2021-03-02 15:14:35,116 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:14:35,135 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:14:36,339 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:14:38,497 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:14:38,507 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:14:44,817 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:14:45,690 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 16.011 seconds (JVM running for 19.804)
+2021-03-02 15:14:45,804 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:14:45,804 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:16:50,373 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:16:50,394 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:16:51,563 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:16:53,769 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:16:53,779 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:17:00,103 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:17:00,964 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 16.095 seconds (JVM running for 20.008)
+2021-03-02 15:17:01,079 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:17:01,079 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:23:41,349 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:23:41,370 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:23:42,840 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:23:45,779 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:23:45,789 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:23:53,184 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:23:54,432 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 18.629 seconds (JVM running for 23.717)
+2021-03-02 15:23:54,612 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:23:54,613 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:24:12,255 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:24:12,275 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:24:13,732 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:24:16,211 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:24:16,220 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:24:23,024 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:24:24,065 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 17.402 seconds (JVM running for 21.935)
+2021-03-02 15:24:24,216 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:24:24,216 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:27:27,891 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:27:27,911 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:27:29,209 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:27:31,591 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:27:31,600 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:27:38,430 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:27:39,410 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 17.116 seconds (JVM running for 21.35)
+2021-03-02 15:27:39,552 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:27:39,561 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:37:25,987 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:37:26,006 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:37:27,285 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:37:29,711 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:37:29,721 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:37:37,168 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:37:38,405 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 18.021 seconds (JVM running for 22.18)
+2021-03-02 15:37:38,604 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:37:38,605 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:43:41,310 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:43:41,337 INFO c.m.a.AssessApplicationTests-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:43:43,259 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:43:46,763 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:43:46,794 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:43:56,598 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:43:58,787 INFO c.m.a.AssessApplicationTests-logStarted [main] Started AssessApplicationTests in 25.066 seconds (JVM running for 31.793)
+2021-03-02 15:44:04,800 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:44:04,807 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:44:06,376 WARN o.s.c.n.a.ArchaiusAutoConfiguration-configureArchaius [main] Netflix ConfigurationManager has already been installed, unable to re-install
+2021-03-02 15:44:11,380 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:44:12,548 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 12.732 seconds (JVM running for 45.556)
+2021-03-02 15:44:12,661 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:44:12,662 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:44:12,812 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:44:12,813 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:45:00,418 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:45:00,448 INFO c.m.a.AssessApplicationTests-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:45:02,364 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:45:05,317 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:45:05,342 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:45:13,232 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:45:15,918 INFO c.m.a.AssessApplicationTests-logStarted [main] Started AssessApplicationTests in 22.159 seconds (JVM running for 27.4)
+2021-03-02 15:45:21,635 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:45:21,642 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:45:23,185 WARN o.s.c.n.a.ArchaiusAutoConfiguration-configureArchaius [main] Netflix ConfigurationManager has already been installed, unable to re-install
+2021-03-02 15:45:28,079 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:45:28,928 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 12.12 seconds (JVM running for 40.412)
+2021-03-02 15:45:29,051 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:45:29,052 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:45:29,258 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:45:29,259 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:45:29,292 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:45:29,300 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:45:29,327 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:45:29,328 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:46:51,638 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:46:51,670 INFO c.m.a.AssessApplicationTests-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:46:53,536 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:46:56,161 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:46:56,177 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:47:03,064 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:47:05,300 INFO c.m.a.AssessApplicationTests-logStarted [main] Started AssessApplicationTests in 20.207 seconds (JVM running for 25.584)
+2021-03-02 15:47:10,976 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:47:10,983 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:47:12,566 WARN o.s.c.n.a.ArchaiusAutoConfiguration-configureArchaius [main] Netflix ConfigurationManager has already been installed, unable to re-install
+2021-03-02 15:47:17,364 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:47:18,077 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 11.974 seconds (JVM running for 38.362)
+2021-03-02 15:47:18,188 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:47:18,189 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:47:18,365 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:47:18,365 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:47:18,384 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:47:18,385 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:47:18,415 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:47:18,416 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:48:08,469 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:48:08,497 INFO c.m.a.AssessApplicationTests-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:48:10,655 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:48:14,279 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:48:14,293 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:48:22,312 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:48:24,949 INFO c.m.a.AssessApplicationTests-logStarted [main] Started AssessApplicationTests in 23.43 seconds (JVM running for 28.867)
+2021-03-02 15:48:30,532 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:48:30,539 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:48:32,860 WARN o.s.c.n.a.ArchaiusAutoConfiguration-configureArchaius [main] Netflix ConfigurationManager has already been installed, unable to re-install
+2021-03-02 15:48:38,337 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:48:39,427 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 13.655 seconds (JVM running for 43.346)
+2021-03-02 15:48:39,611 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:48:39,613 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:48:39,809 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:48:39,809 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:48:39,838 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:48:39,841 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:48:39,885 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:48:39,890 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:54:02,691 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:54:02,744 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:54:04,114 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:54:06,802 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:54:06,813 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:54:13,068 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:54:13,884 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 17.149 seconds (JVM running for 23.4)
+2021-03-02 15:54:13,996 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 15:54:13,997 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 15:54:49,961 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:54:49,980 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:54:51,222 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:54:53,856 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:54:53,868 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:55:00,468 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:55:01,378 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 16.889 seconds (JVM running for 20.992)
+2021-03-02 15:55:01,495 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Scaramanga
+2021-03-02 15:55:01,496 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 15:55:34,241 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:55:34,269 INFO c.m.a.AssessApplicationTests-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:55:36,014 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 15:55:38,521 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:55:38,548 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 15:55:45,621 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:55:47,474 INFO c.m.a.AssessApplicationTests-logStarted [main] Started AssessApplicationTests in 19.558 seconds (JVM running for 24.531)
+2021-03-02 15:55:53,024 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 15:55:53,030 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 15:55:54,459 WARN o.s.c.n.a.ArchaiusAutoConfiguration-configureArchaius [main] Netflix ConfigurationManager has already been installed, unable to re-install
+2021-03-02 15:55:59,018 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 15:55:59,742 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 11.462 seconds (JVM running for 36.8)
+2021-03-02 15:55:59,847 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 15:55:59,849 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 15:56:00,026 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 15:56:00,029 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 15:56:00,059 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Scaramanga
+2021-03-02 15:56:00,060 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 15:56:00,090 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 15:56:00,090 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 17:08:07,009 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:08:07,071 INFO c.m.a.t.AssessServiceTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:08:08,326 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 17:08:10,082 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:08:10,092 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:08:15,625 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:08:17,154 INFO c.m.a.t.AssessServiceTest-logStarted [main] Started AssessServiceTest in 15.836 seconds (JVM running for 20.441)
+2021-03-02 17:09:03,077 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:09:03,096 INFO c.m.a.t.AssessServiceTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:09:04,285 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 17:09:05,940 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:09:05,949 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:09:11,359 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:09:12,881 INFO c.m.a.t.AssessServiceTest-logStarted [main] Started AssessServiceTest in 15.215 seconds (JVM running for 19.412)
+2021-03-02 17:28:18,864 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:28:18,881 INFO c.m.a.t.AssessServiceTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:28:20,028 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 17:28:21,662 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:28:21,674 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:28:27,227 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:28:28,966 INFO c.m.a.t.AssessServiceTest-logStarted [main] Started AssessServiceTest in 15.585 seconds (JVM running for 19.431)
+2021-03-02 17:33:10,813 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:33:10,830 INFO c.m.a.t.AssessServiceTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:33:11,961 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 17:33:13,787 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:33:13,797 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:33:19,378 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:33:20,942 INFO c.m.a.t.AssessServiceTest-logStarted [main] Started AssessServiceTest in 15.567 seconds (JVM running for 19.571)
+2021-03-02 17:33:37,670 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:33:37,689 INFO c.m.a.t.AssessServiceTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:33:38,808 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 17:33:40,453 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:33:40,462 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:33:46,108 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:33:47,812 INFO c.m.a.t.AssessServiceTest-logStarted [main] Started AssessServiceTest in 15.566 seconds (JVM running for 19.374)
+2021-03-02 17:34:29,467 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:34:29,529 INFO c.m.a.AssessApplicationTests-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:34:31,506 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 17:34:35,641 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:34:35,669 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:34:45,225 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:34:47,041 INFO c.m.a.AssessApplicationTests-logStarted [main] Started AssessApplicationTests in 24.388 seconds (JVM running for 37.959)
+2021-03-02 17:34:52,616 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:34:52,622 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:34:53,976 WARN o.s.c.n.a.ArchaiusAutoConfiguration-configureArchaius [main] Netflix ConfigurationManager has already been installed, unable to re-install
+2021-03-02 17:34:58,682 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:34:59,403 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 11.527 seconds (JVM running for 50.323)
+2021-03-02 17:34:59,566 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 17:34:59,567 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 17:34:59,746 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 17:34:59,747 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 17:34:59,765 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Scaramanga
+2021-03-02 17:34:59,766 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 17:34:59,791 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 17:34:59,791 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 17:56:33,727 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:56:33,747 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:56:35,329 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 17:56:38,240 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:56:38,250 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:56:44,695 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:56:45,605 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 18.558 seconds (JVM running for 23.657)
+2021-03-02 17:56:45,772 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 17:56:45,779 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 17:58:11,879 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:58:11,897 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:58:13,040 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 17:58:15,239 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:58:15,248 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:58:21,413 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:58:22,241 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 15.799 seconds (JVM running for 19.711)
+2021-03-02 17:58:22,408 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 17:58:22,412 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 17:58:39,144 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 17:58:39,163 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 17:58:40,372 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 17:58:42,613 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:58:42,623 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 17:58:49,165 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 17:58:49,987 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 16.292 seconds (JVM running for 20.061)
+2021-03-02 17:58:50,137 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 17:58:50,142 ERROR c.m.a.c.AssessController-getAssessByPatientId [main] No Assess for patient id 0
+2021-03-02 17:58:50,143 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] No Assess for patient id 0
+2021-03-02 18:00:41,300 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:00:41,325 INFO c.m.a.AssessApplicationTests-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:00:43,341 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:00:45,847 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:00:45,870 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:00:52,302 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:00:54,397 INFO c.m.a.AssessApplicationTests-logStarted [main] Started AssessApplicationTests in 19.466 seconds (JVM running for 24.941)
+2021-03-02 18:01:00,082 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:01:00,089 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:01:01,495 WARN o.s.c.n.a.ArchaiusAutoConfiguration-configureArchaius [main] Netflix ConfigurationManager has already been installed, unable to re-install
+2021-03-02 18:01:06,693 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:01:07,393 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 12.168 seconds (JVM running for 37.939)
+2021-03-02 18:01:07,522 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 18:01:07,527 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 18:01:07,748 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 18:01:07,750 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 18:01:07,803 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Scaramanga
+2021-03-02 18:01:07,803 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 18:01:07,837 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 18:01:07,843 ERROR c.m.a.c.AssessController-getAssessByPatientId [main] No Assess for patient id 0
+2021-03-02 18:01:07,843 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] No Assess for patient id 0
+2021-03-02 18:06:25,254 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:06:25,273 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:06:26,474 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:06:28,622 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:06:28,631 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:06:34,742 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:06:35,577 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 15.735 seconds (JVM running for 19.614)
+2021-03-02 18:06:35,720 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 18:06:35,725 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 18:08:42,905 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:08:42,925 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:08:44,221 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:08:46,434 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:08:46,443 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:08:52,999 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:08:53,860 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 16.383 seconds (JVM running for 20.775)
+2021-03-02 18:08:54,023 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 18:08:54,041 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 18:09:26,974 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:09:26,993 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:09:28,214 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:09:30,336 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:09:30,345 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:09:36,625 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:09:37,471 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 15.972 seconds (JVM running for 19.577)
+2021-03-02 18:09:37,624 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Scaramanga
+2021-03-02 18:09:37,629 ERROR c.m.a.c.AssessController-getAssessByFamilyName [main] No Assess for patient  Scaramanga
+2021-03-02 18:09:37,630 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] No Assess for patient  Scaramanga
+2021-03-02 18:10:40,161 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:10:40,180 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:10:41,365 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:10:43,614 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:10:43,624 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:10:50,916 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:10:51,865 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 17.103 seconds (JVM running for 21.049)
+2021-03-02 18:10:52,061 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Scaramanga
+2021-03-02 18:10:52,067 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 18:11:10,128 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:11:10,150 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:11:11,342 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:11:13,477 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:11:13,486 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:11:19,690 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:11:20,484 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 15.784 seconds (JVM running for 19.613)
+2021-03-02 18:11:20,622 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start 
+2021-03-02 18:11:20,622 ERROR c.m.a.c.AssessController-getAssessByFamilyName [main] familyName is Empty 
+2021-03-02 18:11:20,623 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] familyName is Empty 
+2021-03-02 18:12:09,399 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:12:09,425 INFO c.m.a.AssessApplicationTests-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:12:11,096 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:12:13,425 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:12:13,442 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:12:19,869 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:12:21,616 INFO c.m.a.AssessApplicationTests-logStarted [main] Started AssessApplicationTests in 18.304 seconds (JVM running for 22.989)
+2021-03-02 18:12:27,288 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:12:27,295 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:12:28,836 WARN o.s.c.n.a.ArchaiusAutoConfiguration-configureArchaius [main] Netflix ConfigurationManager has already been installed, unable to re-install
+2021-03-02 18:12:33,317 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:12:33,938 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 11.466 seconds (JVM running for 35.313)
+2021-03-02 18:12:34,073 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 18:12:34,080 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 18:12:34,307 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 18:12:34,309 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 18:12:34,328 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start 
+2021-03-02 18:12:34,328 ERROR c.m.a.c.AssessController-getAssessByFamilyName [main] familyName is Empty 
+2021-03-02 18:12:34,329 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] familyName is Empty 
+2021-03-02 18:12:34,360 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Scaramanga
+2021-03-02 18:12:34,361 ERROR c.m.a.c.AssessController-getAssessByFamilyName [main] No Assess for patient  Scaramanga
+2021-03-02 18:12:34,362 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] No Assess for patient  Scaramanga
+2021-03-02 18:12:34,376 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 18:12:34,377 ERROR c.m.a.c.AssessController-getAssessByPatientId [main] No Assess for patient id 0
+2021-03-02 18:12:34,377 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] No Assess for patient id 0
+2021-03-02 18:14:49,324 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:14:49,344 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:14:50,539 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:14:52,851 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:14:52,862 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:14:59,357 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:15:00,200 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 16.306 seconds (JVM running for 19.994)
+2021-03-02 18:15:00,334 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 18:15:00,340 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 18:15:19,101 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:15:19,123 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:15:20,324 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:15:22,460 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:15:22,470 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:15:28,767 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:15:29,586 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 15.93 seconds (JVM running for 19.637)
+2021-03-02 18:15:29,748 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 18:15:29,753 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 18:15:29,923 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 18:15:29,924 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 18:15:29,942 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start 
+2021-03-02 18:15:29,943 ERROR c.m.a.c.AssessController-getAssessByFamilyName [main] familyName is Empty 
+2021-03-02 18:15:29,943 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] familyName is Empty 
+2021-03-02 18:15:29,970 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Scaramanga
+2021-03-02 18:15:29,971 ERROR c.m.a.c.AssessController-getAssessByFamilyName [main] No Assess for patient  Scaramanga
+2021-03-02 18:15:29,972 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] No Assess for patient  Scaramanga
+2021-03-02 18:15:29,989 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 18:15:29,992 ERROR c.m.a.c.AssessController-getAssessByPatientId [main] No Assess for patient id 0
+2021-03-02 18:15:29,993 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] No Assess for patient id 0
+2021-03-02 18:16:11,489 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:16:11,517 INFO c.m.a.AssessApplicationTests-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:16:13,163 WARN o.s.b.a.e.EndpointId-logWarning [main] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2021-03-02 18:16:15,586 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:16:15,602 WARN c.n.c.s.URLConfigurationSource-<init> [main] No URLs will be polled as dynamic configuration sources.
+2021-03-02 18:16:21,867 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:16:23,530 INFO c.m.a.AssessApplicationTests-logStarted [main] Started AssessApplicationTests in 18.238 seconds (JVM running for 22.667)
+2021-03-02 18:16:29,053 WARN o.s.c.c.c.ConfigServicePropertySourceLocator-locate [main] Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/microservice-assess/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-03-02 18:16:29,060 INFO c.m.a.t.AssessControllerTest-logStartupProfileInfo [main] No active profile set, falling back to default profiles: default
+2021-03-02 18:16:30,325 WARN o.s.c.n.a.ArchaiusAutoConfiguration-configureArchaius [main] Netflix ConfigurationManager has already been installed, unable to re-install
+2021-03-02 18:16:34,718 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger-logWarning [main] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2021-03-02 18:16:35,373 INFO c.m.a.t.AssessControllerTest-logStarted [main] Started AssessControllerTest in 11.014 seconds (JVM running for 34.512)
+2021-03-02 18:16:35,498 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 1
+2021-03-02 18:16:35,504 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById finish
+2021-03-02 18:16:35,711 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Bond
+2021-03-02 18:16:35,714 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName finish
+2021-03-02 18:16:35,742 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start 
+2021-03-02 18:16:35,743 ERROR c.m.a.c.AssessController-getAssessByFamilyName [main] familyName is Empty 
+2021-03-02 18:16:35,746 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] familyName is Empty 
+2021-03-02 18:16:35,769 INFO c.m.a.c.AssessController-getAssessByFamilyName [main] getAssessByFamilyName start Scaramanga
+2021-03-02 18:16:35,770 ERROR c.m.a.c.AssessController-getAssessByFamilyName [main] No Assess for patient  Scaramanga
+2021-03-02 18:16:35,770 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] No Assess for patient  Scaramanga
+2021-03-02 18:16:35,787 INFO c.m.a.c.AssessController-getAssessByPatientId [main] getAssessById start 0
+2021-03-02 18:16:35,788 ERROR c.m.a.c.AssessController-getAssessByPatientId [main] No Assess for patient id 0
+2021-03-02 18:16:35,788 ERROR c.m.a.c.e.AssessIdNotFoundException-<init> [main] No Assess for patient id 0
