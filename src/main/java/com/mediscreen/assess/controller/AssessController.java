@@ -17,6 +17,7 @@ public class AssessController {
     private static final Logger logger = LogManager.getLogger(AssessController.class);
     @Autowired
     private AssessService assessService;
+
     /*---------------------------  GET Asses by patient Id -----------------------------*/
 
 
