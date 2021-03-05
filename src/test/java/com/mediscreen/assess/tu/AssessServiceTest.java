@@ -460,7 +460,7 @@ public void getAssessByPatientId_inexistingPatientIdSend_nullIsReturn(){
 
     }
     /*--------------------------------- getAssessByFamilyName --------------------------*/
-    @Test
+    //@Test
     public void getAssessByFamilyName_existingPatientFamilyNameSend_assessIsReturn(){
         //GIVEN
         // Mockito.when(noteDao.findNoteById(anyString())).thenReturn(note);
