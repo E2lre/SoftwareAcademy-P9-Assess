@@ -70,7 +70,7 @@ public class Assess {
         this.diabetsAssessmentValue = diabetsAssessmentValue;
     }
 
-    @Override
+/*    @Override
     public String toString() {
         return "Assess{" +
                 "patientId=" + patientId +
@@ -80,5 +80,5 @@ public class Assess {
                 ", diabetsAssessmentId=" + diabetsAssessmentId +
                 ", diabetsAssessmentValue='" + diabetsAssessmentValue + '\'' +
                 '}';
-    }
+    }*/
 }

@@ -1,3 +1,4 @@
+/*
 package com.mediscreen.assess.model.external;
 
 import java.time.LocalDate;
@@ -60,3 +61,4 @@ public class Note {
                 '}';
     }
 }
+*/

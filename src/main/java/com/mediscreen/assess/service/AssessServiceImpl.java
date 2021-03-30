@@ -1,11 +1,18 @@
 package com.mediscreen.assess.service;
 
+/*import com.mediscreen.assess.config.CustomErrorDecoder;
+import com.mediscreen.assess.config.FeignExceptionConfig;
+import com.mediscreen.assess.controller.exception.FeignErrorException;*/
 import com.mediscreen.assess.model.Assess;
 import com.mediscreen.assess.model.external.Patient;
 import com.mediscreen.assess.proxies.NotesProxy;
 import com.mediscreen.assess.proxies.PatientProxy;
+import com.mediscreen.assess.proxies.exception.FeignException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -15,73 +22,144 @@ import java.util.List;
 
 @Service
 public class AssessServiceImpl implements AssessService{
-
+    private static final Logger logger = LogManager.getLogger(AssessServiceImpl.class);
     @Autowired
     private PatientProxy patientProxy;
 
     @Autowired
     private NotesProxy notesProxy ;
 
-    //private static List<String> triggersConst = new ArrayList<>("Hémoglobine A1C","Microalbumine","Taille","Poids","Fumeur","Anormal", "Cholestérol","Vertige","Rechute","Réaction","Anticorps");
     private List triggersConst = Arrays.asList("Hémoglobine A1C","Microalbumine","Taille","Poids","Fumeur","Anormal", "Cholestérol","Vertige","Rechute","Réaction","Anticorps");
     @Override
     public Assess getAssessByPatientId(long patientId) {
-        Assess assessResult = new Assess();
+
         Assess result = null;
+        Patient patient =null;
         int triggerRisk =0;
-
-        Patient patient = patientProxy.getPatientById(patientId);
+        try {
+            //Patient patient = patientProxy.getPatientById(patientId);
+            patient = patientProxy.getPatientById(patientId);
+        } catch (FeignException e) {
+            logger.error( "error on patient proxy : " +e.getMessage());
+            return null;
+        }
         if (patient != null) {
-            int score = notesProxy.getScoreByPatientIdAndTriggers(patientId, triggersConst);
+            result = scoring(patient,triggersConst);
+ /*               int score = notesProxy.getScoreByPatientIdAndTriggers(patientId, triggersConst);
 
-            assessResult.setDiabetsAssessmentId(score);
-            //assessResult.setDiabetsAssessmentId(notesProxy.getScoreByPatientIdAndTriggers(patientId, triggersConst));
-            //triggerRisk = notesProxy.getScoreByPatientIdAndTriggers(patientId, ts);
+                assessResult.setDiabetsAssessmentId(score);
+                //assessResult.setDiabetsAssessmentId(notesProxy.getScoreByPatientIdAndTriggers(patientId, triggersConst));
+                //triggerRisk = notesProxy.getScoreByPatientIdAndTriggers(patientId, ts);
 
-            assessResult.setPatientFirstName(patient.getFirstName());
-            assessResult.setPatientLastName(patient.getLastName());
-            assessResult.setPatientId(patient.getId());
-            assessResult.setPatientAge(Period.between(patient.getBirthdate(),LocalDate.now()).getYears());
+                assessResult.setPatientFirstName(patient.getFirstName());
+                assessResult.setPatientLastName(patient.getLastName());
+                assessResult.setPatientId(patient.getId());
+                assessResult.setPatientAge(Period.between(patient.getBirthdate(), LocalDate.now()).getYears());
 
-            assessResult.setDiabetsAssessmentValue("None");
-            List<Integer> triggerLimit = new ArrayList<>();
+                assessResult.setDiabetsAssessmentValue("None");
+                List<Integer> triggerLimit = new ArrayList<>();
 
-            if (assessResult.getPatientAge()>=30) {
-                triggerLimit.add(7); //Early onset
-                triggerLimit.add(5); //In danger
-                triggerLimit.add(1); //Borderline
-            } else{
-                if ((patient.getSex() =="M") ||(patient.getSex()=="m")) {
-                    triggerLimit.add(4); //Early onset
-                    triggerLimit.add(2); //In danger
-                    triggerLimit.add(99); //Borderline
+                if (assessResult.getPatientAge() >= 30) {
+                    triggerLimit.add(7); //Early onset
+                    triggerLimit.add(5); //In danger
+                    triggerLimit.add(1); //Borderline
                 } else {
-                    triggerLimit.add(6); //Early onset
-                    triggerLimit.add(3); //In danger
-                    triggerLimit.add(99); //Borderline
+                    if ((patient.getSex() == "M") || (patient.getSex() == "m")) {
+                        triggerLimit.add(4); //Early onset
+                        triggerLimit.add(2); //In danger
+                        triggerLimit.add(99); //Borderline
+                    } else {
+                        triggerLimit.add(6); //Early onset
+                        triggerLimit.add(3); //In danger
+                        triggerLimit.add(99); //Borderline
+                    }
+
                 }
 
-            }
-
-            if ( assessResult.getDiabetsAssessmentId() > triggerLimit.get(0) ) {
-                assessResult.setDiabetsAssessmentValue("Early onset");
-            } else {
-                if ( assessResult.getDiabetsAssessmentId() > triggerLimit.get(1) ) {
-                    assessResult.setDiabetsAssessmentValue("In danger");
+                if (assessResult.getDiabetsAssessmentId() > triggerLimit.get(0)) {
+                    assessResult.setDiabetsAssessmentValue("Early onset");
                 } else {
-                    if ( assessResult.getDiabetsAssessmentId() > triggerLimit.get(2) ) {
-                        assessResult.setDiabetsAssessmentValue("Borderline");
+                    if (assessResult.getDiabetsAssessmentId() > triggerLimit.get(1)) {
+                        assessResult.setDiabetsAssessmentValue("In danger");
+                    } else {
+                        if (assessResult.getDiabetsAssessmentId() > triggerLimit.get(2)) {
+                            assessResult.setDiabetsAssessmentValue("Borderline");
+                        }
                     }
                 }
+                result = assessResult;*/
             }
-            result = assessResult;
-        }
-
         return result;
-    }
+   }
 
     @Override
     public List<Assess> getAssessByFamilyName(String famillyName) {
-        return null;
+        List<Assess> assessListResult = new ArrayList<>();
+        List<Patient> patientList ;//= new ArrayList<>();
+
+        try {
+             patientList = patientProxy.getPatientByFamilyName (famillyName);
+        } catch (FeignException e) {
+            logger.error( "error on patient proxy : " +e.getMessage());
+            //return null;
+            return assessListResult;
+        }
+        //if ((patientList != null) || (patientList.size()>0)) {
+        if (patientList != null)  {
+            for (Patient patient : patientList) {
+                //assessListResult.add(getAssessByPatientId(patient.getId()));
+                assessListResult.add(scoring(patient, triggersConst));
+            }
+        }
+        logger.info("test");
+        return assessListResult;
+    }
+
+    private Assess scoring (Patient patient, List<String> triggers) {
+        Assess assessResult = new Assess();
+       // Assess result = null;
+
+        int score = notesProxy.getScoreByPatientIdAndTriggers(patient.getId(), triggersConst);
+
+        assessResult.setDiabetsAssessmentId(score);
+
+        assessResult.setPatientFirstName(patient.getFirstName());
+        assessResult.setPatientLastName(patient.getLastName());
+        assessResult.setPatientId(patient.getId());
+        assessResult.setPatientAge(Period.between(patient.getBirthdate(), LocalDate.now()).getYears());
+
+        assessResult.setDiabetsAssessmentValue("None");
+        List<Integer> triggerLimit = new ArrayList<>();
+
+        if (assessResult.getPatientAge() >= 30) {
+            triggerLimit.add(7); //Early onset
+            triggerLimit.add(5); //In danger
+            triggerLimit.add(1); //Borderline
+        } else {
+            if ((patient.getSex() == "M") || (patient.getSex() == "m")) {
+                triggerLimit.add(4); //Early onset
+                triggerLimit.add(2); //In danger
+                triggerLimit.add(99); //Borderline
+            } else {
+                triggerLimit.add(6); //Early onset
+                triggerLimit.add(3); //In danger
+                triggerLimit.add(99); //Borderline
+            }
+
+        }
+
+        if (assessResult.getDiabetsAssessmentId() > triggerLimit.get(0)) {
+            assessResult.setDiabetsAssessmentValue("Early onset");
+        } else {
+            if (assessResult.getDiabetsAssessmentId() > triggerLimit.get(1)) {
+                assessResult.setDiabetsAssessmentValue("In danger");
+            } else {
+                if (assessResult.getDiabetsAssessmentId() > triggerLimit.get(2)) {
+                    assessResult.setDiabetsAssessmentValue("Borderline");
+                }
+            }
+        }
+        return assessResult;
+
     }
 }

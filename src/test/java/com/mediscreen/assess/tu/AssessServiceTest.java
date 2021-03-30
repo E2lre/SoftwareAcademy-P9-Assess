@@ -1,7 +1,7 @@
 package com.mediscreen.assess.tu;
 
 import com.mediscreen.assess.model.Assess;
-import com.mediscreen.assess.model.external.Note;
+//import com.mediscreen.assess.model.external.Note;
 import com.mediscreen.assess.model.external.Patient;
 import com.mediscreen.assess.proxies.NotesProxy;
 import com.mediscreen.assess.proxies.PatientProxy;
@@ -17,6 +17,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -58,17 +59,18 @@ public class AssessServiceTest {
 
     private Assess assess;
     private Patient patient;
-    private Note note;
+    //private Note note;
 
     @BeforeEach
     public void setUpEach() {
-        assess = new Assess(patientIdConst,patientFirstNameConst,patientLastNameConst,patientAgeConst,diabetsAssessmentIdConst,diabetsAssessmentValueConst);
-        patient = new Patient(patientIdConst,patientFirstNameConst,patientLastNameConst,patientBirthdateMore30,patientSexM,patientAddress,patientPhone);
         patientBirthdate30 = LocalDate.now().minusYears(30);
         patientBirthdateLess30 = LocalDate.now().minusYears(29);
         patientBirthdateMore30 = LocalDate.now().minusYears(31);
         diabetsAssessmentId = diabetsAssessmentIdConst;
         diabetsAssessmentValue = diabetsAssessmentValueConst;
+        assess = new Assess(patientIdConst,patientFirstNameConst,patientLastNameConst,patientAgeConst,diabetsAssessmentIdConst,diabetsAssessmentValueConst);
+        patient = new Patient(patientIdConst,patientFirstNameConst,patientLastNameConst,patientBirthdateMore30,patientSexM,patientAddress,patientPhone);
+
     }
 /*--------------------------------- getAssessByPatientId --------------------------*/
 @Test
@@ -460,25 +462,29 @@ public void getAssessByPatientId_inexistingPatientIdSend_nullIsReturn(){
 
     }
     /*--------------------------------- getAssessByFamilyName --------------------------*/
-    //@Test
+    @Test
     public void getAssessByFamilyName_existingPatientFamilyNameSend_assessIsReturn(){
         //GIVEN
         // Mockito.when(noteDao.findNoteById(anyString())).thenReturn(note);
-
+        List<Patient> patientList = new ArrayList<>();
+        patientList.add(patient);
+        Mockito.when(patientProxy.getPatientByFamilyName((anyString()))).thenReturn(patientList);
+        Mockito.when(notesProxy.getScoreByPatientIdAndTriggers(anyLong(),anyList())).thenReturn(diabetsAssessmentId);
         //WHEN
         List<Assess> assessResultList =  assessService.getAssessByFamilyName(existingFamilyNameConst);
         //THEN
         assertThat(assessResultList).isNotNull();
-        assertThat(assessResultList).size().isEqualTo(1);
+        assertThat(assessResultList).size().isEqualTo(patientList.size());
     }
     @Test
     public void getAssessByFamilyName_inexistingPatientFamilyNameSend_nullIsReturn(){
         //GIVEN
-        // Mockito.when(noteDao.findNoteById(anyString())).thenReturn(note);
+        Mockito.when(patientProxy.getPatientByFamilyName((anyString()))).thenReturn(null);
 
         //WHEN
         List<Assess> assessResultList =  assessService.getAssessByFamilyName(inexistingFamilyNameConst);
         //THEN
-        assertThat(assessResultList).isNull();
+        //assertThat(assessResultList).isNull();
+        assertThat(assessResultList).size().isEqualTo(0);
     }
 }

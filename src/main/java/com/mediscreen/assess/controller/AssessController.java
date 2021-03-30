@@ -29,7 +29,7 @@ public class AssessController {
         String errorMessage =null;
         finalResult = assessService.getAssessByPatientId(patientId);
         if (finalResult == null) {
-            errorMessage = "No Assess for patient id " + patientId;
+            errorMessage = "No patient id " + patientId;
             logger.error(errorMessage);
             throw new AssessIdNotFoundException(errorMessage);
         }
