@@ -11,11 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -102,13 +100,6 @@ public class AssessControllerTest {
         mockMvc.perform(get("/assess/familyName?familyName="+existingFamilyNameConst))
                 .andDo(print())
                 .andExpect(status().isOk());
-        //todo .andExpect(jsonPath("$.data.roles.length()").value(correctRoles.size()));
-                /*.andExpect(jsonPath("$.patientFirstName").value(patientFirstNameConst))
-                .andExpect(jsonPath("$.patientLastName").value(patientLastNameConst))
-                .andExpect(jsonPath("$.patientAge").value(patientAgeConst))
-                .andExpect(jsonPath("$.diabetsAssessmentId").value(diabetsAssessmentIdConst))
-                .andExpect(jsonPath("$.diabetsAssessmentValue").value(diabetsAssessmentValueConst));*/
-
     }
     @Test
     public void getAssessByFamilyName_inexistingPatientFamilyNameSend_errorIsReturn() throws Exception {

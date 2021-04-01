@@ -20,7 +20,12 @@ public class AssessController {
 
     /*---------------------------  GET Asses by patient Id -----------------------------*/
 
-
+    /**
+     * Give a assess for a patient
+     * @param patientId patient id
+     * @return assess for the patient id
+     * @throws AssessIdNotFoundException 404 if patient is not found
+     */
     @GetMapping(value = "/assess/id")
     @ResponseStatus(HttpStatus.OK)
     public Assess getAssessByPatientId(@RequestParam(name = "id")  long patientId) throws AssessIdNotFoundException {
@@ -40,7 +45,12 @@ public class AssessController {
 
     /*---------------------------  GET Asses by patient family name -----------------------------*/
 
-
+    /**
+     * Give assesses list for a patient list with the same family name
+     * @param familyName family name
+     * @return list of assess
+     * @throws AssessIdNotFoundException 404 if no body with family name
+     */
     @GetMapping(value = "/assess/familyName")
     @ResponseStatus(HttpStatus.OK)
     public List<Assess> getAssessByFamilyName(@RequestParam(name = "familyName")  String familyName) throws AssessIdNotFoundException {

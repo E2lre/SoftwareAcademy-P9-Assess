@@ -1,7 +1,6 @@
 package com.mediscreen.assess.tu;
 
 import com.mediscreen.assess.model.Assess;
-//import com.mediscreen.assess.model.external.Note;
 import com.mediscreen.assess.model.external.Patient;
 import com.mediscreen.assess.proxies.NotesProxy;
 import com.mediscreen.assess.proxies.PatientProxy;
@@ -59,7 +58,6 @@ public class AssessServiceTest {
 
     private Assess assess;
     private Patient patient;
-    //private Note note;
 
     @BeforeEach
     public void setUpEach() {

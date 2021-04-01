@@ -1,7 +1,6 @@
 package com.mediscreen.assess.proxies;
 
 import com.mediscreen.assess.model.external.Patient;
-//import com.mediscreen.assess.proxies.exception.HandleFeignError;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,9 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @FeignClient(name = "${microservice-patients.name}")
-//@FeignClient(name = "${microservice-patients.name}", url="${microservice-patients.url}")
-//@FeignClient(name = "microservice-patientsv2", url="localhost:9004/microservice-patientsv2")
-//@FeignClient(name = "microservice-patientsv2", url="localhost:8084")
 public interface PatientProxy {
 
     @GetMapping(value = "/patients")
@@ -19,9 +15,6 @@ public interface PatientProxy {
 
     @GetMapping(value = "/patient/{id}")
     Patient getPatientById(@PathVariable("id") long id);
- /*   @GetMapping(value = "/patient/{id}")
-    @HandleFeignError(PatientExceptionHandler.class)
-    Patient getPatientById(@PathVariable("id") long id) throws PatientNotFoundException;;*/
 
     @GetMapping(value = "/patientFamilyName/{familyName}")
     List<Patient> getPatientByFamilyName(@PathVariable("familyName") String familyName);

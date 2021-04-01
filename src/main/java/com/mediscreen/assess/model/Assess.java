@@ -1,6 +1,5 @@
 package com.mediscreen.assess.model;
 
-import com.sun.istack.NotNull;
 
 public class Assess {
     private long patientId;
@@ -70,15 +69,4 @@ public class Assess {
         this.diabetsAssessmentValue = diabetsAssessmentValue;
     }
 
-/*    @Override
-    public String toString() {
-        return "Assess{" +
-                "patientId=" + patientId +
-                ", patientFirstName='" + patientFirstName + '\'' +
-                ", patientLastName='" + patientLastName + '\'' +
-                ", patientAge=" + patientAge +
-                ", diabetsAssessmentId=" + diabetsAssessmentId +
-                ", diabetsAssessmentValue='" + diabetsAssessmentValue + '\'' +
-                '}';
-    }*/
 }
